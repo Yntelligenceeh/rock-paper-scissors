@@ -15,3 +15,28 @@ function getComputerChoice() {
     console.log("Computer picked: " + computerPick);
     return computerPick;
 }
+
+function playARound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        return "It's a tie, please try again.";
+    }
+    else if(playerSelection === "rock" && computerSelection === "paper") {
+        return "You Lose! Paper beats Rock";
+    }
+    else if(playerSelection === "paper" && computerSelection === "scissors") {
+        return "You Lose! Scissors beats Paper";
+    }
+    else if(playerSelection === "scissors" && computerSelection === "rock") {
+        return "You Lose! Rock beats Scissors";
+    }
+
+    else if(computerSelection === "rock" && playerSelection === "paper") {
+        return "You Win! Paper beats Rock";
+    }
+    else if(computerSelection === "paper" && playerSelection === "scissors") {
+        return "You Win! Scissors beats Paper";
+    }
+    else if(computerSelection === "scissors" && playerSelection === "rock") {
+        return "You Win! Rock beats Scissors";
+    }
+}

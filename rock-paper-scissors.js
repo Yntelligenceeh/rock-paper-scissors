@@ -9,3 +9,9 @@ function getPlayerChoice() {
     else return "Invalid selection, please only pick rock, paper or scissors.";
 }
 
+function getComputerChoice() {
+    const computerOptions = ["rock", "paper", "scissors"];
+    let computerPick = computerOptions[Math.floor(Math.random() * computerOptions.length)]
+    console.log("Computer picked: " + computerPick);
+    return computerPick;
+}

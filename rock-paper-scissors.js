@@ -40,3 +40,20 @@ function playARound(playerSelection, computerSelection) {
         return "You Win! Rock beats Scissors";
     }
 }
+
+console.log(playARound(getPlayerChoice(), getComputerChoice()));
+
+
+/*
+function playARound(playerSelection, computerSelection) {
+    let playerSelection = prompt("Pick rock, paper or scissors", "rock")
+    let computerSelection = getComputerChoice();
+
+    if (playerSelection.toLowerCase() === str1 || 
+    playerSelection.toLowerCase() === str2 ||
+    playerSelection.toLowerCase() === str3) {
+
+    }
+    else print("Invalid selection, please only pick rock, paper or scissors.");
+}
+*/

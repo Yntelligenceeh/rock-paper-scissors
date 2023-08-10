@@ -16,32 +16,61 @@ function getComputerChoice() {
     return computerPick;
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
 function playARound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return "It's a tie, please try again.";
+        playerScore += 1;
+        computerScore +=1;
+        return "You tied in this round. Score: " + playerScore + " : " + computerScore;
     }
     else if(playerSelection === "rock" && computerSelection === "paper") {
-        return "You Lose! Paper beats Rock";
+        computerScore +=1;
+        return "You Lose! Paper beats Rock. Score: " + playerScore + " : " + computerScore;
     }
     else if(playerSelection === "paper" && computerSelection === "scissors") {
-        return "You Lose! Scissors beats Paper";
+        computerScore +=1;
+        return "You Lose! Scissors beats Paper. Score: " + playerScore + " : " + computerScore;
     }
     else if(playerSelection === "scissors" && computerSelection === "rock") {
-        return "You Lose! Rock beats Scissors";
+        computerScore +=1;
+        return "You Lose! Rock beats Scissors. Score: " + playerScore + " : " + computerScore;
     }
 
     else if(computerSelection === "rock" && playerSelection === "paper") {
-        return "You Win! Paper beats Rock";
+        playerScore += 1;
+        return "You Win! Paper beats Rock. Score: " + playerScore + " : " + computerScore;
     }
     else if(computerSelection === "paper" && playerSelection === "scissors") {
-        return "You Win! Scissors beats Paper";
+        playerScore += 1;
+        return "You Win! Scissors beats Paper. Score: " + playerScore + " : " + computerScore;
     }
     else if(computerSelection === "scissors" && playerSelection === "rock") {
-        return "You Win! Rock beats Scissors";
+        playerScore += 1;
+        return "You Win! Rock beats Scissors. Score: " + playerScore + " : " + computerScore;
     }
 }
 
-console.log(playARound(getPlayerChoice(), getComputerChoice()));
+function game() {
+    for (let i = 1; i <= 5; i++) {
+        console.log(playARound(getPlayerChoice(), getComputerChoice()));
+    }
+    
+        if(i = 5 && playerScore > computerScore) {
+            console.log("You won the game!");
+        }
+        else if(i = 5 && playerScore < computerScore) {
+            console.log("Oh no, you lost the game!")
+        }
+        else if(i = 5) {
+            console.log("It's a tie, no one won the game!")
+        }
+}
+
+game();
+
+
 
 
 /*
